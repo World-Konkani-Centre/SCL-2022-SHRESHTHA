@@ -56,7 +56,7 @@ If you need to update `npm`, you can make it using `npm`! Cool right? After runn
     
 ## DB: MONGO ATLAS
     
-    Atlas allows online access to the MongoDB via your IP access. Log in to your atlas before you run your project
+   Atlas allows online access to the MongoDB via your IP access. Log in to your atlas before you run your project
     
 ## Running the application
 
