@@ -44,15 +44,15 @@ Also, be sure to have `git` available in your PATH, `npm` might need it (You can
 
 If the installation was successful, you should be able to run the following command.
 
-    $ node --version
+    node --version
     v8.11.3
 
-    $ npm --version
+    npm --version
     6.1.0
 
 If you need to update `npm`, you can make it using `npm`! Cool right? After running the following command, just open again the command line and be happy.
 
-    $ npm install npm -g
+    npm install npm -g
     
 ## DB: MONGO ATLAS
     
@@ -60,18 +60,18 @@ If you need to update `npm`, you can make it using `npm`! Cool right? After runn
     
 ## Running the application
 
-    $ git clone git@github.com:World-Konkani-Centre/SCL-2022-SHRESHTHA.git
-    $ cd SCL-2022-SHRESHTHA
+    git clone git@github.com:World-Konkani-Centre/SCL-2022-SHRESHTHA.git
+    cd SCL-2022-SHRESHTHA
     
   Now, you need to install the packages both in client and server directory. 
   
-    $ cd server
-    $ npm i && start
+    cd server
+    npm i && start
     
-    $cd ..
+    cd ..
    
-    $ cd client
-    $ npm i && start
+    cd client
+    npm i && start
 
 
 
