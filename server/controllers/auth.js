@@ -56,4 +56,16 @@ const login = async (req, res) => {
     }
 };
 
-module.exports = { signup, login }
+const forgotPassword = async (req, res) => {
+    try {
+        const { username, email } = req.body;
+        console.log(username, email)
+        res.status(200).json({message: 'Email Sent'})
+        
+    } catch (error) {
+        console.log(error);
+        res.status(500).json({ message: error });
+    }
+}
+
+module.exports = { signup, login, forgotPassword }
