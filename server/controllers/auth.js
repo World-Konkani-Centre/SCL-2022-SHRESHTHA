@@ -2,6 +2,7 @@ const { connect } = require('getstream');
 const bcrypt = require('bcrypt');
 const StreamChat = require('stream-chat').StreamChat;
 const crypto = require('crypto');
+const User = require('../models/User');
 
 require('dotenv').config();
 
@@ -22,6 +23,19 @@ const signup = async (req, res) => {
         const token = serverClient.createUserToken(userId);
 
         res.status(200).json({ token, fullName, username, userId, hashedPassword, phoneNumber });
+        const user = new User({
+            userName: username,
+            userId: userId,
+
+        })
+        user.save(err => {
+            if (err) {
+                res.send(err)
+            } else {
+                res.send({ message: "Successfully Registered" });
+            }
+        })
+
     } catch (error) {
         console.log(error);
 
@@ -43,9 +57,11 @@ const login = async (req, res) => {
         const success = await bcrypt.compare(password, users[0].hashedPassword);
 
         const token = serverClient.createUserToken(users[0].id);
+        const query = await User.findOne({ 'userName': username })
+        const daoCoin = query.daoCoin
 
         if(success) {
-            res.status(200).json({ token, fullName: users[0].fullName, username, userId: users[0].id});
+            res.status(200).json({ token, fullName: users[0].fullName, username, userId: users[0].id, daoCoin: daoCoin});
         } else {
             res.status(500).json({ message: 'Incorrect password' });
         }

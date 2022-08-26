@@ -10,4 +10,5 @@ export { default as TeamMessage } from './TeamMessage';
 export { default as Auth } from './Auth';
 export { default as UserList } from './UserList';
 export { default as ResultsDropdown } from './ResultsDropdown';
+export { default as TradePlatform } from './TradePlatform';
 // export { default as ForgotPassword } from './ForgotPassword';

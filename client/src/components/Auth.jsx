@@ -34,7 +34,10 @@ const Auth = () => {
         const URL = 'http://localhost:8080/auth';
         // const URL = 'https://medical-pager.herokuapp.com/auth';
 
-        const { data: { token, userId, hashedPassword, fullName } } = await axios.post(`${URL}/${isSignup ? 'signup' : 'login'}`, {
+        // const { data: { token, userId, hashedPassword, fullName, daoCoin } } = await axios.post(`${URL}/${isSignup ? 'signup' : 'login'}`, {
+        //     username, password, fullName: form.fullName, phoneNumber, avatarURL,
+        // });
+         const { data: { token, userId, hashedPassword, fullName } } = await axios.post(`${URL}/${isSignup ? 'signup' : 'login'}`, {
             username, password, fullName: form.fullName, phoneNumber, avatarURL,
         });
 
@@ -42,6 +45,7 @@ const Auth = () => {
         cookies.set('username', username);
         cookies.set('fullName', fullName);
         cookies.set('userId', userId);
+        // cookies.set('daoCoin', daoCoin);
 
         if(isSignup) {
             cookies.set('phoneNumber', phoneNumber);

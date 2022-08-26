@@ -6,6 +6,7 @@ const cors = require('cors');
 require("dotenv").config();
 
 const authRoutes = require("./routes/auth.js");
+const transferRoutes = require("./routes/transfer.js");
 const accountSid = process.env.TWILIO_ACCOUNT_SID;
 const authToken = process.env.TWILIO_AUTH_TOKEN;
 const messagingServiceSid = process.env.TWILIO_MESSAGING_SERVICE_SID;
@@ -57,6 +58,7 @@ app.post("/", (req, res) => {
   return res.status(200).send("Not a new message request");
 });
 app.use("/auth", authRoutes);
+app.use("/transfer", transferRoutes);
 
 //port
 const PORT = process.env.PORT || 8080;

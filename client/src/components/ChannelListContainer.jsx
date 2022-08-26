@@ -8,6 +8,8 @@ import TradingIcon from '../assets/trading.png'
 import LogoutIcon from '../assets/logout.png'
 
 const cookies = new Cookies();
+const daoCoin = cookies.get('daoCoin')
+console.log(daoCoin)
 
 const SideBar = ({ logout }) => (
     <div className="channel-list__sidebar">
@@ -21,12 +23,15 @@ const SideBar = ({ logout }) => (
                 <img src={LogoutIcon} alt="Logout" width="30" />
             </div>
         </div>
+        <div>
+            
+        </div>
     </div>
 );
 
 const CompanyHeader = () => (
     <div className="channel-list__header">
-        <p className="channel-list__header__text">DAOSPACE</p>
+        <p className="channel-list__header__text">DAOSPACE {daoCoin}</p>
     </div>
 )
 

@@ -3,7 +3,7 @@ import { StreamChat } from 'stream-chat';
 import { Chat } from 'stream-chat-react';
 import Cookies from 'universal-cookie';
 import { TradingDetails } from "./components/TradingDetails";
-import { ChannelListContainer, ChannelContainer, Auth } from './components';
+import { ChannelListContainer, ChannelContainer, Auth, TradePlatform } from './components';
 import {
   BrowserRouter as Router,
   Switch,
@@ -16,7 +16,7 @@ const axios = require('axios');
 
 const cookies = new Cookies();
 
-const apiKey = 'r6xkutp7gdc8';
+const apiKey = 'sndzmeq3bywm';
 const authToken = cookies.get("token");
 
 const client = StreamChat.getInstance(apiKey);
@@ -67,14 +67,16 @@ const App = () => {
                     setCreateType={setCreateType}
                     setIsEditing={setIsEditing}
           />
-                <TradingDetails data={data}/>
+          <TradingDetails data={data} />
+          <TradePlatform></TradePlatform>
                 <ChannelContainer 
                     isCreating={isCreating}
                     setIsCreating={setIsCreating}
                     isEditing={isEditing}
                     setIsEditing={setIsEditing}
                     createType={createType}
-                />
+          />
+          
             </Chat>
         </div>
     );
