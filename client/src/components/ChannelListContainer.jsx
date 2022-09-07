@@ -4,7 +4,7 @@ import Cookies from 'universal-cookie';
 
 
 import { ChannelSearch, TeamChannelList, TeamChannelPreview } from './';
-import TradingIcon from '../assets/trading.png'
+import TradingIcon from '../assets/favicon.svg'
 import LogoutIcon from '../assets/logout.png'
 
 const cookies = new Cookies();
@@ -31,7 +31,7 @@ const SideBar = ({ logout }) => (
 
 const CompanyHeader = () => (
     <div className="channel-list__header">
-        <p className="channel-list__header__text">DAOSPACE {daoCoin}</p>
+        <p className="channel-list__header__text">DAOSPACE</p>
     </div>
 )
 
